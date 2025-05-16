@@ -3,7 +3,7 @@
 {% block body %}
 
 <div class="container">
-    <h1>Welcome{{usename}}</h1>
+    <h1>Welcome</h1>
 
     <form  id="auth-form" action= "{{url_for('login')}}" method="post" class="action">
 
@@ -20,9 +20,20 @@
         placeholder="Enter your password"
         class="form-control"
         />
-        <input type="submit" value="Login"  class="btn btn-login" onclick="setActionForm('login')"/>
 
-        <input type="button" value="Register" class="btn btn-register" onclick="setActionForm('register')" />
+        <input 
+        type="submit" 
+        value="Login"  
+        class="btn btn-login" 
+        onclick="setActionForm('login')"
+        />
+
+        <input 
+        type="button" 
+        value="Register" 
+        class="btn btn-register" 
+        onclick="setActionForm('register')" 
+        />
 
 
     </form>
@@ -43,4 +54,6 @@
     </script>
 
 </div>
+
+
 {% endblock %}
