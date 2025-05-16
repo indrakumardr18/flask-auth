@@ -66,10 +66,8 @@ def logout():
     session.pop("username", None)
     return redirect(url_for("home"))
 
-# # ✅ Create tables before the first request
-# @app.before_first_request
-# def create_tables():
-#     db.create_all()
+
+
 
 # # Add this at the **bottom** of your main.py temporarily
 # with app.app_context():
