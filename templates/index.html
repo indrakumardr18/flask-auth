@@ -5,7 +5,7 @@
 <div class="container">
     <h1>Welcome{{usename}}</h1>
 
-    <form  id="auth-form" action="{{url_for('login')}}" method="post" class="action">
+    <form  id="auth-form" action= "{{url_for('login')}}" method="post" class="action">
 
         <input 
         type="text"
@@ -20,12 +20,27 @@
         placeholder="Enter your password"
         class="form-control"
         />
-        <input type="submit" value="Login"  class="btn btn-login"/>
+        <input type="submit" value="Login"  class="btn btn-login" onclick="setActionForm('login')"/>
 
         <input type="button" value="Register" class="btn btn-register" />
 
 
     </form>
+
+    <script>
+        function setActionForm(action){
+            let form = document.getElementById("auth-form");
+            if (action === 'login'){
+                form.action = "{{url_for('login')}}";
+                form.method = 'post';
+                form.submit();
+            } else if (action === "register"){
+                form.action = "{{url_for('register')}}";
+                form.method = 'post';
+                form.submit();
+            }
+        }
+    </script>
 
 </div>
 {% endblock %}
